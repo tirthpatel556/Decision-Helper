@@ -1,0 +1,122 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 20px;
+}
+
+/* TITLE */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    gap: 20px;
+}
+
+/* CARD */
+.container > div {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* INPUTS */
+input, select {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin: 5px;
+    outline: none;
+}
+
+/* BUTTON */
+button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #38bdf8;
+    color: #0f172a;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+    margin: 5px;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+.reset-btn{
+    background: #f87171;
+    color: white;
+}
+.reset-btn:hover{
+    background: #ef4444;
+}
+.clear-btn{
+    background: #fbbf24;
+    color: #0f172a;
+}
+.clear-btn:hover {
+    background: #f59e0b;
+}
+
+/* LIST */
+ul {
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    margin: 5px 0;
+}
+
+/* RESULT */
+#result {
+    background: #020617;
+    padding: 15px;
+    border-radius: 10px;
+    white-space: pre-line;
+    border: 1px solid #334155;
+    height: 120px;
+    overflow-y: auto;
+    white-space: pre-line;
+    scroll-behavior: smooth;
+}
+
+/* CHART */
+canvas {
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* HISTORY */
+#historyList li {
+    background: #020617;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #334155;
+    max-height: 150px;
+    overflow-y: auto;
+}

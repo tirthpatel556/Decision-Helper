@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!--HEADING -->
+
+<h1>Decision Helper</h1>
+
+<div class="container">
+
+    <!-- OPTIONS -->
+    <div>
+        <h2>🧩 Add Options</h2>
+        <input type="text" id="optionInput" placeholder="Enter option">
+        <button onclick="addOption()">Add</button>
+        <ul id="optionsList"></ul>
+    </div>
+
+    <!-- CRITERIA -->
+    <div>
+        <h2>⚙️ Select Criteria</h2>
+
+        <select id="criteriaSelect">
+            <option value="">Select Criteria</option>
+            <option value="Importance">Importance</option>
+            <option value="Interest">Interest</option>
+            <option value="Difficulty">Difficulty</option>
+            <option value="Time Required">Time Required</option>
+            <option value="Cost">Cost</option>
+        </select>
+
+        <button onclick="addCriteria()">Add</button>
+
+        <ul id="criteriaList"></ul>
+    </div>
+
+    <!-- SCORING -->
+    <div>
+        <h2>📊 Score Options</h2>
+        <div id="scoringSection"></div>
+    </div>
+
+    <!-- <button onclick="calculateResult()">Get Decision</button> -->
+
+    <!-- RESULT -->
+    <div>
+        <h2>📈 Result</h2>
+        <pre id="result"></pre>
+    </div>
+    <canvas id="resultChart" width="400" height="200"></canvas>
+
+    <!-- HISTORY -->
+
+    <h2>🕘 History</h2>
+    <ul id="historyList"></ul>
+    <div style="margin-top: 10px;">
+        <Button class="clear-btn" onclick="clearHistory()">Clear History</Button>
+        <button class="reset-btn" onclick="resetAll()">Reset</button>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
