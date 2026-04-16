@@ -1,6 +1,6 @@
 let options = [];
 let criteria = [];
-let chartInstance = null; 
+let chartInstance = null;
 const negativeCriteria = ["Time Required", "Cost", "Difficulty"];
 
 //  Default weights 
@@ -80,8 +80,8 @@ function displayCriteria() {
   criteria.forEach((c, index) => {
     let li = document.createElement("li");
     li.innerHTML = `
-            ${c.name} (Weight: ${c.weight})
-            <button onclick="deleteCriteria(${index})">❌</button>
+            ${c.name}                     
+             <button onclick="deleteCriteria(${index})">❌</button>
         `;
     list.appendChild(li);
   });
