@@ -178,3 +178,63 @@ canvas {
     background: #38bdf8;
     border-radius: 10px;
 }
+
+/* RESPONSIVNESS */
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    input, select{
+        width: 100%;
+        margin: 5px 0;
+    }
+    button{
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    li{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    li button{
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    #scoringSection > div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1{
+        font-size: 1.6rem;
+    }
+    h2{
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    canvas{
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .container > div{
+        padding: 15px;
+    }
+}
