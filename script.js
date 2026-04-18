@@ -35,7 +35,7 @@ function displayOptions() {
     let li = document.createElement("li");
     li.innerHTML = `
             ${opt}
-            <button onclick="deleteOption(${index})">❌</button>
+            <button onclick="deleteOption(${index})">x</button>
         `;
     list.appendChild(li);
   });
@@ -81,7 +81,7 @@ function displayCriteria() {
     let li = document.createElement("li");
     li.innerHTML = `
             ${c.name}                     
-             <button onclick="deleteCriteria(${index})">❌</button>
+             <button onclick="deleteCriteria(${index})">x</button>
         `;
     list.appendChild(li);
   });
@@ -179,6 +179,19 @@ function calculateResult() {
 
     let winners = scores.filter(s => s.score === maxScore);
 
+    // To prevent repeating history
+
+    let hasMissing = false;
+
+    options.forEach((_,i) =>{
+      criteria.forEach((_,j) =>{
+        let val = document.getElementById(`score-${i}-${j}`).value;
+        if (val === "") {
+          hasMissing = true;
+        }
+      });
+    });
+
     // Handle tie
     
     if (winners.length > 1) {
@@ -188,7 +201,10 @@ function calculateResult() {
         document.getElementById("result").innerText =
             `Best Decision: ${winners[0].option} (Score: ${maxScore})\n\nAll Scores:\n${resultText}`;
 
-            saveToHistory(scores,winners[0]);
+            // saveToHistory(scores,winners[0]);
+            if (!hasMissing && winners.length === 1) {
+              saveToHistory(scores, winners[0]);
+            }
     }
 
     //Prepare data for chart
@@ -217,9 +233,30 @@ chartInstance = new Chart(ctx, {
     },
     options: {
         responsive: true,
+        plugins: {
+          legend: {
+            labels: {
+              color: "#e2e8f0"
+            }
+          }
+        },
         scales: {
+          x: {
+            ticks: {
+              color: "#e2e8f0"
+            },
+            grid: {
+              color: "rgba(255, 255, 255, 0.1)"
+            }
+          },
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                ticks: {
+                  color: "#e2e8f0"
+                },
+                grid: {
+                  color: "rgba(255, 255, 255, 0.1)"
+                }
             }
         }
     }
